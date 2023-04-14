@@ -1,34 +1,15 @@
 import {
   extend,
-  Banner,
-  Button,
   Image,
-  BlockStack,
-  InlineStack,
   Text,
-  Pressable,
-  InlineLayout,
-  Icon,
-  View,
-  Style,
   Grid,
   Heading,
-  GridItem,
   BlockLayout,
   BlockSpacer,
 } from "@shopify/checkout-ui-extensions";
 
 
 extend("Checkout::Dynamic::Render", (root, { extensionPoint, i18n, api }) => {
-  const imageLogo = root.createComponent(Image, {
-    source:
-      'https://cdn.shopify.com/s/files/1/2465/9907/files/logo_green.png?110205',
-    loading: "lazy",
-    accessibilityDescription: "Slofood Logo",
-    fit: 'contain',
-    aspectRatio: '7'
-  });
-
   const offerTime = root.createComponent(
     Grid,
     {
@@ -160,9 +141,6 @@ extend("Checkout::Dynamic::Render", (root, { extensionPoint, i18n, api }) => {
     ],
   );
 
-
-
-  root.appendChild(imageLogo);
   root.appendChild(offerTime);
   root.appendChild(storeStamps);
   root.appendChild(whyBuyFromUs);
